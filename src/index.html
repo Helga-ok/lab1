@@ -5,7 +5,7 @@
     <title>My</title>
      <!-- <link rel="stylesheet" type="text/css" href="main.css"> -->
     <style>
-        #style1
+        #forDiv
         {
             text-align: center;
         }
@@ -13,11 +13,10 @@
 </head>
 <body>
 
-<div id="style1"> <iframe src="tmp/tmp.html"></iframe> </div>
+<div id="forDiv"> <iframe src="tmp/tmp.html"></iframe> </div>
 <script>
     var angle = 0;
     var f = false;
-
     this.addEventListener('keydown', rotate);
     this.addEventListener('mousedown', flagUp);
     this.addEventListener('mouseup', flagDown);
@@ -26,7 +25,7 @@
 
     function rotate(e)
     {
-        var doc = document.getElementById('style1');
+        var doc = document.getElementById('forDiv');
         switch(e.keyCode)
         {
             case 37:
@@ -62,10 +61,10 @@
     function move(e)
     {
         if(f) {
-            var doc = document.getElementById('style1');
-            doc.style.backgroundColor = 'red';
-            doc.style.left = parseInt(doc.style.left) + e.offsetLeft;
-            doc.style.top = parseInt(doc.style.top) + e.offsetTop;
+            var doc = document.getElementById('forDiv');
+            //doc.style.backgroundColor = 'red';
+            //doc.style.cursor = 'move';
+            doc.style.webkitTransform = 'translate(' + (e.pageX) + 'px ,' + (e.pageY) + 'px)';
         }
     }
 </script>
