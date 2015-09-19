@@ -7,7 +7,6 @@
     <style>
         #forDiv
         {
-            text-align: center;
         }
     </style>
 </head>
@@ -62,8 +61,6 @@
     {
         if(f) {
             var doc = document.getElementById('forDiv');
-            //doc.style.backgroundColor = 'red';
-            //doc.style.cursor = 'move';
             doc.style.webkitTransform = 'translate(' + (e.pageX) + 'px ,' + (e.pageY) + 'px)';
         }
     }
